@@ -20,5 +20,9 @@ int knapsack(vector<int>&weight, vector<int>&value, int W){
 }
 
 int main(){
-    
+    vector<int>weights={1,3,4};
+    vector<int>values={10,20,30};
+    int W=6;
+    cout<<knapsack(weights, values,W);
 }
+
