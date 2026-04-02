@@ -17,5 +17,22 @@ int main(){
     }
     sort(jobs.begin(), jobs.end(), cmp);
 
-    int maxDeadline= max(maxDeadline+1, -1)
+    int maxDeadline= 0;
+    for(auto &job:jobs){
+        maxDeadline= max(maxDeadline, job.deadline);
+    }
+    vector<int> slot(maxDeadline+1,-1);
+    int count=0, totalprofit=0;
+
+    for(auto &job:jobs){
+        for(int j=job.deadline;j>0;j--){
+            if(slot[j]==-1){
+                slot[j]=job.id;
+                count++;
+                totalProfit += job.profit;
+                break;
+            }
+        }
+    }
+    cout << count << " " << totalProfit;
 }
