@@ -21,6 +21,11 @@ int main(){
         int s= act.first;
         int e= act.second;
 
-        if
+        if(s > last_end){
+            count++;
+            last_end=e;
+        }
     }
+    cout<< count <<endl;
+
 }
