@@ -12,5 +12,20 @@ int main(){
     for(int i=0;i<n;i++){
         activities.push_back({start[i],end[i]});
     }
-    
+
+    sort(acticities.begin(), activities.end(),[](pair<int
+    int>a, pair<int,int> b)
+    {return a.second<b.second;});
+
+    int count =0;
+    int last_end=-1;
+    for(auto &act: activities){
+        int s= act.first;
+        int e= act.second;
+        if(s>last_end){
+            count++;
+            last_end=e;
+        }
+    }
+    cout<<count<<endl;
 }
