@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 struct job{
     int id, deadline, profit;
+
 };
 
 bool cmp(job a, job b){
@@ -9,28 +11,29 @@ bool cmp(job a, job b){
 }
 
 int main(){
-    int n; cin>>n;
-    vector<job> jobs(n);
+    int n;
+    cin>>n;
+    vector<job> job(n);
     for(int i=0;i<n;i++){
-        cin>>jobs[i].id>>jobs[i].deadline>>jobs[i].profit;
+        cin>>job[i].id;
+        cin>>job[i].deadline;
+        cin>>job[i].profit;
+    }
+    sort(job.begin(), job.end(), cmp);
+
+    int maxdeadline=0;
+    for(auto &job:job){
+        maxdeadline=max(maxdeadline, job.deadline);
     }
 
-    sort(jobs.begin(), jobs.end(), cmp);
-
-    int maxDeadline=0;
-    for(auto &job :jobs){
-        maxDeadline= max(maxDeadline, job.deadline);
-    }
-
-    vector<int> slot(maxDeadline+1, -1);
-    int count=0, int totalprofit=0;
-
-    for(auto &job: jobs){
-        for(int i=job.deadline; j>0;j--){
-            if(slot[i]==-1){
-                slot[i]=job.id;
+    vector<int> slot(maxdeadline+1, -1);
+    int count=0, totalprofit=0;
+    for(auto &job: job){
+        for (int j=job.deadline;j>0;j++){
+            if(slot[j]==-1){
+                slot[j]=job.deadline;
                 count++;
-                totalprofit+= job.profit;
+                totalprofit+=job.profit;
                 break;
             }
         }
