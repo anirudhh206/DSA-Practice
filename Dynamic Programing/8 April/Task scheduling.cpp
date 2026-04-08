@@ -23,5 +23,11 @@ int minimumRounds(vector<int> &tasks){
 int main(){
     int n;
     cin>> n;
-    vector<int>
+    vector<int>tasks(n);
+    for(int i=0;i<n;i++){
+        cin>>tasks[i];
+    }
+
+    cout<< minimumRounds(tasks);
+
 }
