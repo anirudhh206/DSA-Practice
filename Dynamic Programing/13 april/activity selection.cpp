@@ -8,7 +8,7 @@ int main(){
     for(int i=0;i<n;i++)cin>>start[i];
     for(int i=0;i<n;i++)cin>>end[i];
 
-    vector<pair<int>>activities;
+    vector<pair<int,int>>activities;
     for(int i=0;i<n;i++){
         activities.push_back({start[i],end[i]});
     }
@@ -16,7 +16,7 @@ int main(){
     sort(activities.begin(), activities.end(), [](pair<int, int>a, pair<int, int>b){return a.second>b.second;});
 
     int count=0;
-    int test_end=-1;
+    int last_end=-1;
     for(auto &act:activities){
         int s = act.first;
         int e = act.second;
