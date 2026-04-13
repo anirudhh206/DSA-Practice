@@ -13,7 +13,7 @@ int main(){
         activities.push_back({start[i],end[i]});
     }
 
-    sort(activities.begin(), activities.end(), [](pair<int, int>a, pair<int, int>b){return a.second>b.second;});
+    sort(activities.begin(), activities.end(), [](pair<int, int>a, pair<int, int>b){return a.second<b.second;});
 
     int count=0;
     int last_end=-1;
