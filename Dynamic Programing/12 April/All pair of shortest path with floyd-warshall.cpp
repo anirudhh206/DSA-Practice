@@ -10,7 +10,7 @@ int main() {
 
     // Input
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
+        for (int j = 0; j < n; j++){
             cin >> dist[i][j];
 
             // Convert -1 to INF

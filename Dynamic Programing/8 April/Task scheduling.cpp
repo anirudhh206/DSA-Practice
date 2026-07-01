@@ -5,7 +5,7 @@ using namespace std;
 int minimumRounds(vector<int> &tasks){
     unordered_map<int,int> freq;
     for(int t:tasks){
-        freq[t]++;
+        freq[t]++;n
     }
     int totalRounds =0;
     for(auto it : freq){
