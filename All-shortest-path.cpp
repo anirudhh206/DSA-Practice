@@ -23,7 +23,7 @@ int main(){
 
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
-            fi(dist[i][j]==INF)cout<<"INF";
+            if(dist[i][j]==INF)cout<<"INF";
             else cout<<dist[i][j]<<" ";
         }
         cout<<endl;
