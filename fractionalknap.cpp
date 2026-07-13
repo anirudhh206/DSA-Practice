@@ -24,6 +24,10 @@ double fractional_knapsack(int W, vector<Item> &item)
         {
             W -= item.weight;
             totalValue += item.value;
+        }else
+        {
+            totalValue += item.value * ((double)W / item.weight);
+            break;
         }
     }
     return totalValue;
